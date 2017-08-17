@@ -13,4 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/','ManhController@index');
+Route::resource('buyers','Buyer\BuyerController',['only'=>['index','show']]);
+
+Route::resource('categories','Category\CategoryController',['except'=>['create','edit']]);
+
+Route::resource('products','Product\ProductController',['only'=>['index','show']]);
+
+Route::resource('sellers','Seller\SellerController',['only'=>['index','show']]);
+
+Route::resource('transactions','Transaction\TransactionController',['only'=>['index','show']]);
+
+Route::resource('users','user\userController',['except'=>['create','edit']]);
